@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+    }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+</style>
+<main class="form-signin w-100 m-auto text-center">
+    <form method="post" asp-action="Index" asp-controller="Home">
+        <img class="mb-4" src="../images/bootstrap-logo.svg" alt="" width="72" height="57" loading="lazy">
+        <h1 class="h3 mb-3 fw-normal">偽もなちゃと</h1>
+      
+        <div class="form-floating">
+            <input type="text" class="form-control" name="user_name" id="floatingPassword" placeholder="名前">
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" asp-for="">開始</button>
+    </form>
+</main>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
