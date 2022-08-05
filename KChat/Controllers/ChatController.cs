@@ -20,5 +20,10 @@ namespace KChat.Controllers
             ViewData["UserName"] = userName;
             return View();
         }
+
+        public IActionResult MainRoom()
+        {
+            return View();//
+        }
     }
 }
