@@ -21,9 +21,11 @@ namespace KChat.Controllers
             return View();
         }
 
-        public IActionResult MainRoom()
+        public IActionResult MainRoom(string name)
         {
-            return View();//
+            if (name == null) return NotFound();
+            
+            return View();
         }
     }
 }
