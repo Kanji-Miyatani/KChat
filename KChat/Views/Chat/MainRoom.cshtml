@@ -1,7 +1,13 @@
-﻿<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+﻿@model KChat.Models.ChatRoom.ChatRoomViewModel
+@{
+    ViewData["Title"] = Model.RoomName;
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <div class="container">
 <div class="row clearfix">
+    <h1>@Model.RoomName</h1>
     <div class="col-lg-12">
         <div class="card chat-app">
             <div id="plist" class="people-list">
@@ -13,48 +19,17 @@
                 </div>
 
                 <ul class="list-unstyled chat-list mt-2 mb-0">
-                    <li class="clearfix">
-                        <img src="" alt="avatar">
-                        <div class="about">
-                            <div class="name">参加者１</div>
-                            <div class="status"> <i class="fa fa-circle offline"></i> ７分前にオフライン </div>                                            
-                        </div>
-                    </li>
-                    <li class="clearfix active">
-                        <img src="" alt="avatar">
-                        <div class="about">
-                            <div class="name">参加者２</div>
-                            <div class="status"> <i class="fa fa-circle online"></i> オンライン </div>
-                        </div>
-                    </li>
-                    <li class="clearfix">
-                        <img src="" alt="avatar">
-                        <div class="about">
-                            <div class="name">参加者３</div>
-                            <div class="status"> <i class="fa fa-circle online"></i> オンライン </div>
-                        </div>
-                    </li>                                    
-                    <li class="clearfix">
-                        <img src="" alt="avatar">
-                        <div class="about">
-                            <div class="name">水間双</div>
-                            <div class="status"> <i class="fa fa-circle offline"></i> １０分前にオフライン </div>
-                        </div>
-                    </li>
-                    <li class="clearfix">
-                        <img src="" alt="avatar">
-                        <div class="about">
-                            <div class="name">参加者５</div>
-                            <div class="status"> <i class="fa fa-circle online"></i> オンライン </div>
-                        </div>
-                    </li>
-                    <li class="clearfix">
-                        <img src="" alt="avatar">
-                        <div class="about">
-                            <div class="name">参加者６</div>
-                            <div class="status"> <i class="fa fa-circle offline"></i> オフライン </div>
-                        </div>
-                    </li>
+                    @foreach (var user in Model.Users)
+                    { 
+                        <li class="clearfix">
+                            <img src="" alt="avatar">
+                            <div class="about">
+                                <div class="name">@user.Name</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> ７分前にオフライン </div>                                            
+                            </div>
+                        </li>
+                    }
+                 
                 </ul>
             </div>
             <div class="chat">
@@ -65,7 +40,7 @@
                                 <img src="" alt="avatar">
                             </a>
                             <div class="chat-about">
-                                <h6 class="m-b-0">ルーム名？</h6>
+                                <h6 class="m-b-0">@Model.RoomName</h6>
                                 <small>ルーム作成時間</small>
                             </div>
                         </div>

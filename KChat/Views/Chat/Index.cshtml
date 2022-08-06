@@ -1,33 +1,35 @@
-﻿@{
+﻿@model KChat.Models.RoomSelect.RoomSelectViewModel
+@{
     ViewData["Title"] = "チャットルーム";
     var userName = ViewData["UserName"]?.ToString();
 }
+<form asp-action="Index" asp-controller="Chat" method="post">
     <div class="container">
         <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-2">User</div>
-            <div class="col-4"><input type="text" id="userInput" value="@userName" /></div>
-        </div>
-        <div class="row">
-            <div class="col-2">Message</div>
-            <div class="col-4"><input type="text" id="messageInput" /></div>
-        </div>
-        <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-6">
-                <input type="button" id="sendButton" value="Send Message" />
-            </div>
-        </div>
+        <button class="btn btn-dark mx-auto my-3" value="メイン部屋" type="submit">メインルーム</button>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <hr />
+    <div class="mt-3">
+        <div class="font-weight-bold">
+            <input type="hidden" asp-for="SelectedRoomName" value="MainRoom" class="border-0 bg-white" readonly />
+            <input type="text" asp-for="SelectedCharactorID" class="border-0 bg-white" readonly />
         </div>
+        <ul>
+            @foreach (var character in Model.CharactorList)
+            {
+                <li>
+                    <img src="@character.CharacterPath" alt="@character.CharactertID" /> <button type="button" class="btn form-control btn-chara" value="@character.CharactertID">@character.CharactertID</button>
+                </li>
+            }
+        </ul>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <ul id="messagesList"></ul>
-        </div>
-    </div>
-    <script src="~/js/signalr/dist/browser/signalr.js"></script>
-    <script src="~/js/chat.js"></script>
+</form>
+@section Scripts
+{
+<script>
+    $(".btn-chara").on("click", function() {
+        const btn = $(this);
+        const value = btn.val();
+        $('#SelectedCharactorID').val(value);
+    })
+</script>
+}

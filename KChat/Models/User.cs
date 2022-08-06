@@ -17,11 +17,11 @@ namespace KChat.Models
         /// <summary>
         /// 識別ID
         /// </summary>
-        public int ID { get; set; }
+        public string ID { get; set; }
         /// <summary>
         /// 入室中のRoom
         /// </summary>
-        public int? RoomID { get; set; }
+        public Room Room { get; set; }
         /// <summary>
         /// キャラクター情報
         /// </summary>
@@ -37,7 +37,7 @@ namespace KChat.Models
         {
             get 
             {
-                return RoomID!=null;
+                return Room != null;
             }
         }
     }

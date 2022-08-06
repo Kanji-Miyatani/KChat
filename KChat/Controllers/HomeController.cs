@@ -66,7 +66,7 @@ namespace KChat.Controllers
             //セッションにログイン中のID,追加。
             int userCount=HttpContext.Session.Keys.Count();
             HttpContext.Session.SetString(GlobalConstants.SESSION_KEY_USERID,$"user_{userCount}");
-            HttpContext.Session.SetString(GlobalConstants.SESSION_KEY_USERID, user_name);
+            HttpContext.Session.SetString(GlobalConstants.SESSION_KEY_USERNAME, user_name);
 
 
             //レスポンスに認証用Cookie追加
