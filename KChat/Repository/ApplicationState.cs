@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace KChat.Repository
 {
-    public class ApplicationState
+    public static class ApplicationStateExtension
     {
+        
     }
 }

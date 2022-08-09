@@ -21,6 +21,16 @@ namespace KChat.Repository
             {
                 RoomID ="MainRoom",
                 RoomName ="メインルーム"
+            },
+             new Room()
+            {
+                RoomID ="SubRoom",
+                RoomName ="サブルーム"
+            },
+              new Room()
+            {
+                RoomID ="TrashBox",
+                RoomName ="ごみのはきだめ"
             }
         };
 
