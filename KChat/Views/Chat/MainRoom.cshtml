@@ -8,6 +8,7 @@
 <div class="container">
 <div class="row clearfix">
     <h1>@Model.RoomName</h1>
+    <input type="hidden" id="roomName" value="@Model.RoomName" />　<!--　RoomNameを取得-->
     <div class="col-lg-12">
         <div class="card chat-app">
             <div id="plist" class="people-list">
@@ -54,7 +55,7 @@
                                 <span class="message-data-time">時刻をここに表示</span>
                                 <img src="" alt="avatar">
                             </div>　　　　　　
-                            <div class="message other-message float-right"> メッセージです。動きます。 </div>
+                            <div class="message other-message float-right"><ul id="messagesList"></ul> </div>　<!--id="messagesList"　にメッセージを表示-->
                             </div>　　　　　　　　　　　　　　　　　　<!--　div class="drag-and-drop" で囲った部分が動かせます-->
                         </li>
                         <li class="clearfix">
@@ -74,9 +75,9 @@
                 <div class="chat-message clearfix">
                     <div class="input-group mb-0">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-send"></i></span>
+                            <span class="input-group-text" input type="button" id="sendButton"><i class="fa fa-send"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="ここにメッセージを入力">                                    
+                        <input type="text" class="form-control" placeholder="ここにメッセージを入力" id="messageInput" />  <!--id="messagesInput"のメッセージを送信-->                                  
                     </div>
                 </div>
             </div>
@@ -84,7 +85,6 @@
     </div>
 </div>
 </div>
-
 <style>
     body{
     background-color: #f4f7f6;
@@ -436,3 +436,5 @@
 
 })()
 </script>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

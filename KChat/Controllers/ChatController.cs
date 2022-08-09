@@ -88,5 +88,6 @@ namespace KChat.Controllers
             return View(vm);
 
         }
+
     }
 }
