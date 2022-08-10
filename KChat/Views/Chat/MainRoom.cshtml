@@ -434,7 +434,17 @@
         drag.classList.remove("drag");
     }
 
-})()
+    })()
+    //位置情報が更新されるたびに、ここのstoreデータを書き換える方向で行きましょう
+    var store = {
+        me: {
+            x: 100//初期位置X
+            y:100//初期位置Y
+        },
+        others: {
+            
+        }
+    };
 </script>
 
 @section Scripts 
