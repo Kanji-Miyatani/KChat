@@ -1,0 +1,29 @@
+body{
+    margin:0;
+    text-align: center;
+    background-color: gray;
+}
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.canvas{
+    background-color: rgb(9, 0, 36);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.box-neon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    background-color: #dddddd;
+    font-size: 30px;
+    width: 100px;
+    height: 300px;
+    border-radius: 3px;
+    box-shadow: -5px -5px 15px 5px rgba(255, 0, 0, 0.8), 5px 5px 15px 7px rgba(213, 92, 0, 0.8);
+  }
+
+  
