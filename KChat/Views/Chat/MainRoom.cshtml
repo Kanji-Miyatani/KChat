@@ -55,7 +55,7 @@
                                 <span class="message-data-time">時刻をここに表示</span>
                                 <img src="" alt="avatar">
                             </div>　　　　　　
-                            <div class="message other-message float-right"><ul id="messagesList"></ul> </div>　<!--id="messagesList"　にメッセージを表示-->
+                            <div class="message other-message float-right" id="test"><ul id="messagesList"></ul> </div>　<!--id="messagesList"　にメッセージを表示-->
                             </div>　　　　　　　　　　　　　　　　　　<!--　div class="drag-and-drop" で囲った部分が動かせます-->
                         </li>
                         <li class="clearfix">
@@ -436,5 +436,15 @@
 
 })()
 </script>
+
+@section Scripts 
+{
+<script>
+$('#sendButton').click(function() {
+    $('#test').hide(10000); //Jquery　吹き出しを消す処理（おためし大学）
+})
+</script>
+}
+
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
